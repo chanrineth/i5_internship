@@ -31,4 +31,70 @@ Route::get('/service', function () {
     return view('service');
 });
 
+Route::get('/user', function () {
 
+    $users = [
+        [
+            'id' => 1,
+            'name' => 'Rineth',
+            'sex' => "girl"
+        ],
+        [
+            'id' => 2,
+            'name' => 'Pisey',
+            'sex' => "girl"
+        ],
+        [
+            'id' => 3,
+            'name' => 'Ratha',
+            'sex' => "girl"
+        ],
+        [
+            'id' => 4,
+            'name' => 'uong',
+            'sex' => "boy"
+        ]
+
+    ];
+
+    return view('user',compact('users'));
+});
+
+Route::get('/user/{id}', function ($id) {
+
+    $users = [
+        [
+            'id' => 1,
+            'name' => 'Rineth',
+            'sex' => "girl"
+        ],
+        [
+            'id' => 2,
+            'name' => 'Pisey',
+            'sex' => "girl"
+        ],
+        [
+            'id' => 3,
+            'name' => 'Ratha',
+            'sex' => "girl"
+        ],
+        [
+            'id' => 4,
+            'name' => 'uong',
+            'sex' => "boy"
+        ]
+
+    ];
+
+    $userFound =null ;
+
+    foreach ($users as $user){
+
+        if($user['id'] == $id ){
+            $userFound  = $user;
+        }
+    }
+
+
+    return view('show-user',compact('userFound'));
+});
