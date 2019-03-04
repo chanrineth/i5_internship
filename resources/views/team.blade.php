@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Team')
+@section('title', 'TeamController')
 @section('content')
 <!-- Team -->
 <section class="bg-light" id="team">

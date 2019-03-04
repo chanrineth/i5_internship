@@ -11,23 +11,31 @@
 |
 */
 
-Route::get('/', function () {
-    return view('service');
+
+
+Route::get('/service','FrontendController@service')->name('service');
+
+Route::get('/','FrontendController@home')->name('home');
+Route::get('/about', 'FrontendController@about')->name('about');
+Route::get('/contact','FrontendController@contact')->name('contact');
+Route::get('/portfolio','FrontendController@portfolio')->name('portfolio');
+
+
+Route::get('/team','TeamController@team')->name('team');
+
+Route::group(['prefix' => 'post'],function (){
+
+    Route::get('create','PostController@createpost')->name('create-post');
+    Route::post('store','PostController@store')->name('store');
 });
 
-Route::get('/about', function () {
-    return view('about');
+
+Route::group(['prefix' => 'user'],function (){
+
+    Route::get('','UserController@user')->name('user');
+    Route::get('/{id}','UserController@getUser')->name('get_user');
+
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
 
-Route::get('/portfolio', function () {
-    return view('portfolio');
-});
-
-Route::get('/team', function () {
-    return view('team');
-});
 

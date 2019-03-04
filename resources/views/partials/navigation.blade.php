@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="/">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="{{ route('home') }}">Start Bootstrap</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -9,20 +9,27 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/">Services</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('service') }}">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/portfolio">Portfolio</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('portfolio') }}">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/about">About</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/team">Team</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('team') }}">Team</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/contact">Contact</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('contact') }}">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ route('user') }}">User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ route('create-post') }}">Create</a>
+                </li>
+
             </ul>
         </div>
     </div>
