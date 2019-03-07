@@ -9,12 +9,15 @@ class FrontendController extends Controller {
 
     public function home(){
 
-        return view('service');
+        $posts = Post::orderBy('created_at','desc')->with('user')->get();
+
+        return view('service',compact('posts'));
     }
 
     public function service(){
 
-        $posts = Post::orderBy('created_at','desc')->get();
+        $posts = Post::orderBy('created_at','desc')->with('user')->get();
+
 
 //        dd($posts);
         return view('service',compact('posts'));

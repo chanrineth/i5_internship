@@ -23,13 +23,6 @@ Route::get('/portfolio','FrontendController@portfolio')->name('portfolio');
 
 Route::get('/team','TeamController@team')->name('team');
 
-Route::group(['prefix' => 'post'],function (){
-
-    Route::get('create','PostController@createpost')->name('create-post');
-    Route::post('store','PostController@store')->name('store');
-});
-
-
 Route::group(['prefix' => 'user'],function (){
 
     Route::get('','UserController@user')->name('user');
@@ -38,4 +31,17 @@ Route::group(['prefix' => 'user'],function (){
 });
 
 
+Route::group(['prefix' => 'post'],function (){
+
+    Route::get('create','PostController@createpost')->name('create-post');
+    Route::post('store','PostController@store')->name('store');
+
+    Route::get('show/{id}','PostController@show')->name('show');
+
+    Route::get('edit/{id}','PostController@edit')->name('edit');
+
+    Route::get('delate/{id}','PostController@delate')->name('delate');
+
+
+});
 
